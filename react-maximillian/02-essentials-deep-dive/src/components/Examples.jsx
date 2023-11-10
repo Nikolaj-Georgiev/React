@@ -30,6 +30,8 @@ export default function Examples() {
       className='section'
     >
       <Tabs
+        // buttonsContainer={Section}// for custom component, we pass just the function name between curly bracers e.g. Section
+        // ButtonsContainer='menu' we can pass here whatever we need. But if we don't pass something we still get 'menu' since we set it as a default value of that prop in the Tabs component
         buttons={
           <>
             <TabButton
