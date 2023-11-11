@@ -36,6 +36,7 @@ header {
 header img {
   width: 8rem;
   object-fit: contain;
+  opacity: 90%;
   margin: 3rem auto 1rem auto;
   filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.4));
 }
