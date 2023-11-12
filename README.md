@@ -1,6 +1,6 @@
 <h1>React</h1>
 <p align="left">
-  <a href="https://skillicons.dev">
+  <a href="https://react.dev/">
     <img src="https://skillicons.dev/icons?i=react&theme=dark&perline=1" />
   </a>
 </p>
