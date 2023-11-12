@@ -350,3 +350,9 @@ ol {
     transform: scale(1);
   }
 }
+
+@media (max-width: 34em) {
+  html {
+    font-size: 62.5%;
+  }
+}
