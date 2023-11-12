@@ -1,33 +1,22 @@
 // import { useState } from 'react';
 
-const initialGameBoard = [
-  [null, null, null],
-  [null, null, null],
-  [null, null, null],
-];
-
-export default function GameBoard({ onSelectSquare, turns }) {
+export default function GameBoard({ onSelectSquare, board }) {
   /////////////////////
   //N.B. think and work in React! You should MANAGE as LITTLE STATE as needed and try to DERIVE as MUCH information and as many values, as possible!!!!
   /////////////////////
-  let gameBoard = initialGameBoard;
-
-  turns?.forEach((turn) => {
-    const { square, player } = turn;
-    const { row, col } = square;
-
-    gameBoard[row][col] = player;
-  });
 
   return (
     <ol id='game-board'>
-      {gameBoard.map((row, rowIndex) => (
+      {board.map((row, rowIndex) => (
         <li key={rowIndex}>
           <ol>
             {row.map((player, colIndex) => (
               <li key={colIndex}>
                 {/* <button onClick={() => handleUserChoice(rowIndex, colIndex)}> */}
-                <button onClick={() => onSelectSquare(rowIndex, colIndex)}>
+                <button
+                  onClick={() => onSelectSquare(rowIndex, colIndex)}
+                  disabled={player !== null}
+                >
                   {player}
                 </button>
               </li>
