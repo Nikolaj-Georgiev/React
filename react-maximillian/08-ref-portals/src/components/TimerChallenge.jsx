@@ -6,31 +6,38 @@ import ResultModal from './ResultModal.jsx';
 export default function TimerChallenge({ title, targetTimer }) {
   const dialog = useRef();
   const timer = useRef(); // every instance of this component will get it's own timer that will work independently from the other instances of this component. Behind the scenes React will store these values stored in ref and it will not throw them away when component re-executes, like the state value. But unlike state value setting the ref value does not make this component to execute again!!! N.B.
-
-  const [timerStarted, setTimerStarted] = useState(false);
-  const [timerExpired, setTimerExpired] = useState(false);
-
   // let timer;// we cannot use it here, because every time the state changes we will get new timer variable...
 
-  function handleStart() {
-    timer.current = setTimeout(() => {
-      setTimerExpired(true);
-      dialog.current.open();
-    }, targetTimer * 1000);
+  const [timeRemaining, setTimeRemaining] = useState(targetTimer * 1000);
+  const timerIsActive = timeRemaining > 0 && timeRemaining < targetTimer * 1000;
 
-    setTimerStarted(true);
+  if (timeRemaining <= 0) {
+    clearInterval(timer.current);
+    dialog.current.open();
+  }
+
+  function onReset() {
+    setTimeRemaining(targetTimer * 1000);
+  }
+
+  function handleStart() {
+    timer.current = setInterval(() => {
+      setTimeRemaining((prevTimeR) => prevTimeR - 10);
+    }, 10);
   }
 
   function handleStop() {
-    clearTimeout(timer.current);
+    dialog.current.open();
+    clearInterval(timer.current);
   }
 
   return (
     <>
       <ResultModal
         targetTime={targetTimer}
-        result='lost'
+        remainingTime={timeRemaining}
         ref={dialog}
+        onReset={onReset}
       />
       <section className='challenge'>
         <h2>{title}</h2>
@@ -38,12 +45,12 @@ export default function TimerChallenge({ title, targetTimer }) {
           {targetTimer} second{targetTimer > 1 ? 's' : ''}
         </p>
         <p>
-          <button onClick={timerStarted ? handleStop : handleStart}>
-            {timerStarted ? 'Stop' : 'Start'} Challenge
+          <button onClick={timerIsActive ? handleStop : handleStart}>
+            {timerIsActive ? 'Stop' : 'Start'} Challenge
           </button>
         </p>
-        <p className={timerStarted ? 'active' : undefined}>
-          {timerStarted ? 'Timer is running...' : 'Timer inactive'}
+        <p className={timerIsActive ? 'active' : undefined}>
+          {timerIsActive ? 'Timer is running...' : 'Timer inactive'}
         </p>
       </section>
     </>
