@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import { CartContext } from '../store/shopping-cart-context.jsx';
 
-export default function Cart({ onUpdateItemQuantity }) {
+export default function Cart() {
   // const cartCtx = useContext(CartContext); or we can destructure it...
-  const { items } = useContext(CartContext);
+  const { items, updateCartItemQuantity } = useContext(CartContext);
 
   // const totalPrice = cartCtx.items.reduce(
   const totalPrice = items.reduce(
@@ -27,11 +27,11 @@ export default function Cart({ onUpdateItemQuantity }) {
                   <span> ({formattedPrice})</span>
                 </div>
                 <div className='cart-item-actions'>
-                  <button onClick={() => onUpdateItemQuantity(item.id, -1)}>
+                  <button onClick={() => updateCartItemQuantity(item.id, -1)}>
                     -
                   </button>
                   <span>{item.quantity}</span>
-                  <button onClick={() => onUpdateItemQuantity(item.id, 1)}>
+                  <button onClick={() => updateCartItemQuantity(item.id, 1)}>
                     +
                   </button>
                 </div>
