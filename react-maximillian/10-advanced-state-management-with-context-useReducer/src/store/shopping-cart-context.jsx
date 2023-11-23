@@ -10,9 +10,6 @@ export const CartContext = createContext({
 function shoppingCartReducer(state, action) {
   if (action.type === 'ADD_ITEM') {
     const updatedItems = [...state.items];
-    const test = { count: 0 };
-    console.log({ ...test });
-    console.log(test.count);
 
     const existingCartItemIndex = updatedItems.findIndex(
       (cartItem) => cartItem.id === action.payload
