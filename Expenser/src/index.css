@@ -80,7 +80,7 @@ body {
   font-family: 'IBM Plex Sans', sans-serif;
   line-height: 1;
   font-weight: 400;
-  color: #193241;
+  color: #555;
 
   /* This only works if there is nothing absolutely positioned
   in relation to body */
@@ -128,7 +128,7 @@ body {
 .main-nav-link:visited {
   display: inline-block;
   text-decoration: none;
-  color: #1c3748;
+  color: #555;
   font-size: 1.8rem;
   font-weight: 500;
 
@@ -139,7 +139,7 @@ body {
 .main-nav-link.nav-cta:visited {
   padding: 1.2rem 2.4rem;
   border-radius: 9px;
-  color: #1c3748;
+  color: #555;
   background-color: #f7cd08;
 }
 
