@@ -1,17 +1,17 @@
 import { useState, useCallback } from 'react';
 
 import QUESTIONS from '../questions.js';
-import QuestionTimer from './QuestionTimer.jsx';
-import quizCompleteImg from '../assets/quiz-complete.png';
+import Question from './Question.jsx';
+import Summery from './Summery.jsx';
 
 export default function Quiz() {
   const [userAnswers, setUserAnswers] = useState([]);
   const activeQuestionIndex = userAnswers.length;
   const quizIsComplete = activeQuestionIndex === QUESTIONS.length;
 
-  const handleSelectAnswer = useCallback((answer) => {
+  const handleSelectAnswer = useCallback((selectedAnswer) => {
     setUserAnswers((prevUserAnswers) => {
-      return [...prevUserAnswers, answer];
+      return [...prevUserAnswers, selectedAnswer];
     });
   }, []);
 
@@ -21,41 +21,17 @@ export default function Quiz() {
   );
 
   if (quizIsComplete) {
-    return (
-      <div id='summary'>
-        <img
-          src={quizCompleteImg}
-          alt='Image of a trophy cup'
-        />
-        <h2>Quiz Completed!</h2>
-      </div>
-    );
+    return <Summery userAnswers={userAnswers} />;
   }
-  const shuffledAnswers = [...QUESTIONS[activeQuestionIndex].answers];
-  shuffledAnswers.sort(() => Math.random() - 0.5);
 
   return (
     <div id='quiz'>
-      <QuestionTimer
+      <Question
         key={activeQuestionIndex}
-        timeout={10000}
-        onTimeout={handleSkipAnswer}
+        index={activeQuestionIndex}
+        onSelectAnswer={handleSelectAnswer}
+        onSkipAnswer={handleSkipAnswer}
       />
-      <div id='questions'>
-        <p>{QUESTIONS[activeQuestionIndex].text}</p>
-        <ul id='answers'>
-          {shuffledAnswers.map((answer) => (
-            <li
-              key={answer}
-              className='answer'
-            >
-              <button onClick={() => handleSelectAnswer(answer)}>
-                {answer}
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
     </div>
   );
 }
