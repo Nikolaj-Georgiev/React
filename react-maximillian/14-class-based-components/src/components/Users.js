@@ -7,6 +7,7 @@ import classes from './Users.module.css';
 
 
 class Users extends Component {
+
   constructor () {
     super();
     this.state = {
@@ -14,6 +15,13 @@ class Users extends Component {
       more: 'Test'
     };//in class components state ALWAYS is an OBJECT!!! and also has to be property named 'state'! -> N.B.
   }
+
+  componentDidUpdate() {
+    if (this.props.users.length === 0) {
+      throw new Error('No users provided')
+    }
+  }
+
   toggleUsersHandler() {
     // this.state.showUsers = !this.state.showUsers; this is NOT how you do it!!! instead you call a special method this.setState()
     // this.setState({showUsers: false}) // always pass an object { } behind the scenes React MERGES the ne object with the old one, DOES NOT OVERRIDE IT!!!
