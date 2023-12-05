@@ -5,6 +5,7 @@ import Modal from './components/Modal.jsx';
 import DeleteConfirmation from './components/DeleteConfirmation.jsx';
 import logoImg from './assets/logo.png';
 import AvailablePlaces from './components/AvailablePlaces.jsx';
+import { updateUserPlaces } from './http.js';
 
 function App() {
   const selectedPlace = useRef();
@@ -22,7 +23,8 @@ function App() {
     setModalIsOpen(false);
   }
 
-  function handleSelectPlace(selectedPlace) {
+  async function handleSelectPlace(selectedPlace) {
+    console.log(selectedPlace);
     setUserPlaces((prevPickedPlaces) => {
       if (!prevPickedPlaces) {
         prevPickedPlaces = [];
@@ -32,6 +34,8 @@ function App() {
       }
       return [selectedPlace, ...prevPickedPlaces];
     });
+
+    await updateUserPlaces([selectedPlace, ...userPlaces]);
   }
 
   const handleRemovePlace = useCallback(async function handleRemovePlace() {
@@ -44,7 +48,10 @@ function App() {
 
   return (
     <>
-      <Modal open={modalIsOpen} onClose={handleStopRemovePlace}>
+      <Modal
+        open={modalIsOpen}
+        onClose={handleStopRemovePlace}
+      >
         <DeleteConfirmation
           onCancel={handleStopRemovePlace}
           onConfirm={handleRemovePlace}
@@ -52,7 +59,10 @@ function App() {
       </Modal>
 
       <header>
-        <img src={logoImg} alt="Stylized globe" />
+        <img
+          src={logoImg}
+          alt='Stylized globe'
+        />
         <h1>PlacePicker</h1>
         <p>
           Create your personal collection of places you would like to visit or
@@ -62,7 +72,7 @@ function App() {
       <main>
         <Places
           title="I'd like to visit ..."
-          fallbackText="Select the places you would like to visit below."
+          fallbackText='Select the places you would like to visit below.'
           places={userPlaces}
           onSelectPlace={handleStartRemovePlace}
         />
