@@ -3,6 +3,8 @@
 --- 01 TYPOGRAPHY SYSTEM
 - Font sizes (px):
 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+- Font sizes (rem)
+1 / 1.2 / 1.4 / 1.6 / 1.8 / 2.0 / 2.4 / 3.0 / 3.6 / 4.4 / 5.2 / 6.2 / 7.4 / 8.6 / 9.8
 
 - Font weights:
 Default: 400;
@@ -27,8 +29,8 @@ Large: 1.8;
 --- 02 COLORS
 
 - Primary: #42C47E;
--secondary: #1C3748;
--tertiary: #F7CD08
+-secondary: #F7CD08;
+-tertiary: #1C3748;
 - Tints: 
 
 - Shades:
@@ -71,9 +73,7 @@ html {
   /* Percentage of user browser font-size setting */
   font-size: 62.5%;
   overflow-x: hidden;
-
-  /* Does not work on Safari */
-  /* scroll-behavior: smooth; */
+  scroll-behavior: smooth;
 }
 
 body {
@@ -105,6 +105,7 @@ body {
   /* width: 7.4rem; */
   padding: 0.4rem;
   box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.15);
+  border: 1px solid rgb(247, 203, 8);
   border-radius: 50%;
   background-image: linear-gradient(
     to bottom,
@@ -151,4 +152,18 @@ body {
 .main-nav-link:hover,
 .main-nav-link:active {
   color: #c6a406;
+}
+
+.main-nav-link.nav-base:link,
+.main-nav-link.nav-base:visited {
+  padding: 1.2rem 2.4rem;
+  border: 2px solid #f7cd08;
+  border-radius: 9px;
+  color: #555;
+}
+
+.main-nav-link.nav-base:hover,
+.main-nav-link.nav-base:active {
+  color: #c6a406;
+  border: 2px solid #c6a406;
 }
