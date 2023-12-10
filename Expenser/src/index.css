@@ -102,6 +102,7 @@ body {
   height: 9.6rem;
   padding: 0 4.8rem;
   position: relative;
+  border-bottom: 0.3rem solid #f7cd08;
 }
 
 .logo {
@@ -196,4 +197,39 @@ body {
   font-size: 4.4rem;
   line-height: 1.05;
   padding-bottom: 3.2rem;
+}
+
+.hero-features-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.hero-feature-item {
+  display: flex;
+  /* flex-wrap: wrap;
+  justify-content: center; */
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.hero-feature-text {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.6rem;
+  letter-spacing: -0.65;
+}
+
+.hero-feature-image {
+  height: 5.2rem;
+  width: 5.2rem;
+  border-radius: 50%;
+}
+
+.hero-img {
+  width: 100%;
+  border: 0.8rem solid #f7cd08;
+  border-radius: 50%;
 }
