@@ -32,6 +32,8 @@ Large: 1.8;
 -secondary: #F7CD08;
 -tertiary: #1C3748;
 - Tints: 
+-#a1e2bf
+-#c6edd8
 
 - Shades:
 
@@ -56,9 +58,11 @@ Medium: 11px;
 
 --- 07 WHITESPACE 
 
-- Spacing system (px)
+- Spacing system 
+(px)
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
-
+(rem)
+0.2 / 0.4 / 0.8 / 1.2 / 1.6 / 2.4 / 3.2 / 4.8 / 6.4 / 8.0 / 9.6 / 12.8
 */
 
 * {
@@ -91,7 +95,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #a1e2bf;
+  background-color: #c6edd8;
   /* padding: 2.4rem 4.8rem; */
 
   /* Because we want the navigation to become sticky later */
@@ -166,4 +170,30 @@ body {
 .main-nav-link.nav-base:active {
   color: #c6a406;
   border: 2px solid #c6a406;
+}
+/* ///////////////////////////// */
+/*             HERO              */
+/* ///////////////////////////// */
+.section-hero {
+  background-color: #c6edd8;
+  padding: 4.8rem 0 9.6rem 0;
+}
+
+.hero {
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 9.6rem;
+  align-items: center;
+}
+
+.heading-primary {
+  font-weight: 700;
+  color: 333;
+  letter-spacing: -0.2rem;
+  font-size: 4.4rem;
+  line-height: 1.05;
+  padding-bottom: 3.2rem;
 }
