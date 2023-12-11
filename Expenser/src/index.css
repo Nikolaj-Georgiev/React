@@ -34,6 +34,7 @@ Large: 1.8;
 - Tints: 
 -#a1e2bf
 -#c6edd8
+-#ecf9f2
 
 - Shades:
 #1a4e32
@@ -69,6 +70,8 @@ Medium: 11px;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scrollbar-color: #a1e2bf;
+  scrollbar-width: thin;
 }
 
 html {
@@ -254,12 +257,12 @@ body {
 
 /* Other browsers - Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-  width: 15px;
+  width: 1.5rem;
 }
 
 *::-webkit-scrollbar-track {
-  border-radius: 5px;
-  background-color: #42c47e;
+  border-radius: 0.5rem;
+  background-color: #a1e2bf;
 }
 
 /* *::-webkit-scrollbar-track:hover {
@@ -267,13 +270,10 @@ body {
 } */
 
 *::-webkit-scrollbar-track:active {
-  background-color: #42c47e;
+  background-color: #a1e2bf;
 }
 
 *::-webkit-scrollbar-thumb {
-  border-radius: 20px;
-  background-color: #42c47e;
+  border-radius: 2rem;
+  background-color: #a1e2bf;
 }
-scro
-scrollbar-color: var(--secondary-color) var(--primary-color);
-scrollbar-width: thin;
