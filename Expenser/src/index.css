@@ -36,7 +36,7 @@ Large: 1.8;
 -#c6edd8
 
 - Shades:
-
+#1a4e32
 
 - Accents:
 - Greys:
@@ -176,7 +176,7 @@ body {
 /*             HERO              */
 /* ///////////////////////////// */
 .section-hero {
-  background-color: #c6edd8;
+  background-color: #ecf9f2;
   padding: 4.8rem 0 9.6rem 0;
 }
 
@@ -213,6 +213,8 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 2.4rem;
+  padding-left: 9.8rem;
+  padding-bottom: 2.4rem;
 }
 
 .hero-feature-text {
@@ -233,3 +235,45 @@ body {
   border: 0.8rem solid #f7cd08;
   border-radius: 50%;
 }
+
+.hero-icon {
+  height: 4.8rem;
+  width: 4.8rem;
+  color: #42c47e;
+  margin: 0;
+  padding: 0;
+}
+
+.icon {
+  display: inline-block;
+
+  stroke-width: 1;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+/* Other browsers - Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #42c47e;
+}
+
+/* *::-webkit-scrollbar-track:hover {
+  background-color: var(--primary-color);
+} */
+
+*::-webkit-scrollbar-track:active {
+  background-color: #42c47e;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #42c47e;
+}
+scro
+scrollbar-color: var(--secondary-color) var(--primary-color);
+scrollbar-width: thin;
