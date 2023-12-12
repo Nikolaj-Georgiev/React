@@ -12,18 +12,18 @@ export default function Modal({ children, open, onClose, className = '' }) {
       modal.showModal();
     }
 
-    const handleKeyDown = (event) => {
-      if (event.key === 'Escape') {
-        modal.close();
-        onClose();
-      }
-    };
+    // const handleKeyDown = (event) => {
+    //   if (event.key === 'Escape') {
+    //     modal.close();
+    //     onClose();
+    //   }
+    // };
 
-    window.addEventListener('keydown', handleKeyDown);
+    // window.addEventListener('keydown', handleKeyDown);
 
     return () => {
       modal.close();
-      window.removeEventListener('keydown', handleKeyDown);
+      // window.removeEventListener('keydown', handleKeyDown);
     };
   }, [open]);
   return createPortal(
