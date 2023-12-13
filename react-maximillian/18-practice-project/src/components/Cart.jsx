@@ -6,6 +6,7 @@ import Button from './UI/Button.jsx';
 
 import { currencyFormatter } from '../util/formatting.js';
 import UserProgressContext from '../store/UserProgressContext.jsx';
+import CartItem from './CartItem.jsx';
 
 export default function Cart() {
   const cartCtx = useContext(CartContext);
@@ -20,16 +21,28 @@ export default function Cart() {
     userProgressCtx.hideCart();
   }
 
+  function handleGoToCheckout() {
+    userProgressCtx.showCheckout();
+  }
+
   return (
     <Modal
       className='cart'
       open={userProgressCtx.progress === 'cart'}
-      onClose={handleCloseCart}
+      onClose={userProgressCtx.progress === 'cart' ? handleCloseCart : null}
     >
       <h2>Your cart</h2>
       <ul>
         {cartCtx.items.map((item) => (
-          <li key={item.id}>{`${item.name} - ${item.quantity}`}</li>
+          // <CartItem key={item.id} {...item} /> // this is one possible solution
+          <CartItem
+            key={item.id}
+            name={item.name}
+            price={item.price}
+            quantity={item.quantity}
+            onDecrease={() => cartCtx.removeItem(item.id)}
+            onIncrease={() => cartCtx.addItem(item)}
+          />
         ))}
       </ul>
       <p className='cart-total'>{currencyFormatter.format(cartTotal)}</p>
@@ -40,7 +53,9 @@ export default function Cart() {
         >
           Close
         </Button>
-        <Button onClick={handleCloseCart}>Go to Checkout</Button>
+        {cartCtx.items.length > 0 ? (
+          <Button onClick={handleGoToCheckout}>Go to Checkout</Button>
+        ) : null}
       </p>
     </Modal>
   );
