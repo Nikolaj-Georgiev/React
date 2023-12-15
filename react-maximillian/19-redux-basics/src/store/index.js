@@ -1,10 +1,16 @@
 // import redux from 'redux';
-import { shallowEqual } from 'react-redux';
 import { createStore } from 'redux';
 
 const initialState = { counter: 0, showCounter: true };
 
 const counterReducer = (state = initialState, action) => {
+
+  //////////////////////////////////////
+  // N.B. objects that we return from the reducer will override the existing one. It will not merge but it will replace the old one with a new one!!!!!!!!!
+
+  // !!! NEVER CHANGE THE EXISTING STATE !!!
+  // !!! ALWAYS OVERRIDE IT BY RETURNING A BRAND NEW STATE OBJECT !!!
+
   if (action.type === 'increment') {
     return {
       counter: state.counter + 1,
