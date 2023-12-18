@@ -1,29 +1,28 @@
 import { useDispatch, useSelector } from 'react-redux';
 // import { connect } from 'react-redux';
 
-import { counterActions } from '../store/index';
 import classes from './Counter.module.css';
 // import { Component } from 'react';
 
 const Counter = () => {
   const dispatch = useDispatch();
-  const counter = useSelector(state => state.counter.counter); // when you use useSelector react will automatically set up a subscription to the store for this component! N.B.
-  const show = useSelector(state => state.counter.showCounter);
+  const counter = useSelector(state => state.counter); // when you use useSelector react will automatically set up a subscription to the store for this component! N.B.
+  const show = useSelector(state => state.showCounter);
 
   const incrementHandler = () => {
-    dispatch(counterActions.increment());
+    dispatch({ type: 'increment' });
   };
 
   const increaseHandler = () => {
-    dispatch(counterActions.increase(10));// this will return {type:SOME_UNIQUE_IDENTIFIER, payload: 10}
+    dispatch({ type: 'increase', amount: 10 })
   };
 
   const decrementHandler = () => {
-    dispatch(counterActions.decrement());
+    dispatch({ type: 'decrement' });
   };
 
   const toggleCounterHandler = () => {
-    dispatch(counterActions.toggleCounter())
+    dispatch({ type: 'toggle' })
   };
 
   return (
