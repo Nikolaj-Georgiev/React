@@ -100,7 +100,7 @@ body {
 
 /* Other browsers - Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-  width: 1.5rem;
+  width: 0.8rem;
 }
 
 *::-webkit-scrollbar-track {
