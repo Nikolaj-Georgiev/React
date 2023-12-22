@@ -1,3 +1,3 @@
 export default function Register() {
-  return <h1>Register to be implemented...</h1>;
+  return <h2>Register to be implemented...</h2>;
 }
