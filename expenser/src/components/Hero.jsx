@@ -25,7 +25,7 @@ export default function Hero() {
                     size='large'
                   ></ion-icon>
                   <p className={classes['hero-feature-text']}>
-                    Create a monthly budget for your household
+                    Monthly budget for your household
                   </p>
                 </Li>
                 <Li className={classes['hero-feature-item']}>
@@ -35,7 +35,7 @@ export default function Hero() {
                     size='large'
                   ></ion-icon>
                   <p className={classes['hero-feature-text']}>
-                    Set up savings goals for different purposes
+                    Set up family savings goals
                   </p>
                 </Li>
                 <Li className={classes['hero-feature-item']}>
@@ -55,7 +55,7 @@ export default function Hero() {
                     size='large'
                   ></ion-icon>
                   <p className={classes['hero-feature-text']}>
-                    Access your data anytime, anywhere, from any device
+                    Access your data from any device
                   </p>
                 </Li>
                 <Li className={classes['hero-feature-item']}>
@@ -65,7 +65,7 @@ export default function Hero() {
                     size='large'
                   ></ion-icon>
                   <p className={classes['hero-feature-text']}>
-                    Share your progress and challenges with your family
+                    Share your progress with your family
                   </p>
                 </Li>
               </ul>
