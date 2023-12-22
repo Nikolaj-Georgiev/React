@@ -1,7 +1,5 @@
 import './App.css';
-import Header from './components/Header';
 import Hero from './components/Hero';
-import MainNav from './components/MainNav';
 
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import RooterLayout from './pages/Root.jsx';
