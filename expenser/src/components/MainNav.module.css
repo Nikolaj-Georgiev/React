@@ -1,0 +1,49 @@
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4.8rem;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #555;
+  font-size: 1.8rem;
+  font-weight: 500;
+
+  transition: all 0.3s;
+}
+
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited {
+  padding: 1.2rem 2.4rem;
+  border-radius: 9px;
+  color: #555;
+  background-color: #f7cd08;
+}
+
+.main-nav-link.nav-cta:hover,
+.main-nav-link.nav-cta:active {
+  background-color: #c6a406;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #c6a406;
+}
+
+.main-nav-link.nav-base:link,
+.main-nav-link.nav-base:visited {
+  padding: 1.2rem 2.4rem;
+  border: 2px solid #f7cd08;
+  border-radius: 9px;
+  color: #555;
+}
+
+.main-nav-link.nav-base:hover,
+.main-nav-link.nav-base:active {
+  color: #c6a406;
+  border: 2px solid #c6a406;
+}
