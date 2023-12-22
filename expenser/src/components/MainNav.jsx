@@ -3,13 +3,14 @@ import Li from '../UI/Li';
 import classes from './MainNav.module.css';
 
 export default function MainNav() {
-  const linkCssClass = classes['main-nav-link'];
+  const linkCssClass = `${classes['main-nav-link']} ${classes['nav-base']}`;
+  const buttonsCssClass = `${classes['main-nav-link']} ${classes['nav-cta']}`;
   return (
     <nav className={classes['main-nav']}>
       <ul className={classes['main-nav-list']}>
         <Li>
           <Link
-            className={`${linkCssClass} nav-base`}
+            className={linkCssClass}
             to='about'
           >
             About
@@ -18,7 +19,7 @@ export default function MainNav() {
 
         <Li>
           <Link
-            className={`${linkCssClass} nav-base`}
+            className={linkCssClass}
             to='testimonials'
           >
             Testimonials
@@ -27,7 +28,7 @@ export default function MainNav() {
 
         <Li>
           <Link
-            className={`${linkCssClass} nav-cta`}
+            className={buttonsCssClass}
             to='login'
           >
             Login
@@ -36,7 +37,7 @@ export default function MainNav() {
 
         <Li>
           <Link
-            className={`${linkCssClass} nav-cta`}
+            className={buttonsCssClass}
             to='register'
           >
             Register
