@@ -6,13 +6,13 @@
   padding: 0 3.2rem;
   display: grid;
   grid-template-rows: 1fr 2fr 1fr;
-  gap: 6.2rem;
+  gap: 4.4rem;
   justify-items: center;
 }
 
 .broken-piggy-bank {
   width: 100%;
-  max-width: 30rem;
+  max-width: 36rem;
   background-color: #ecf9f2;
   padding: 3.6rem;
   border-radius: 50%;
