@@ -12,8 +12,9 @@ export default function Hero() {
           <div className={classes['hero-text-box']}>
             <div>
               <h1 className={classes['heading-primary']}>
-                Money Matters: A Web App for Family Expense Management and
-                Savings Goals
+                {/* Money Matters: A Web App for Family Expense Management and
+                Savings Goals */}
+                Money Matters: A Web App for Family Expense Management
               </h1>
             </div>
             <div>

@@ -29,7 +29,7 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
-      <NextSection />
+      {/* <NextSection /> */}
     </>
   );
 }

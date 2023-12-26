@@ -108,10 +108,6 @@ body {
   background-color: #42c47e;
 }
 
-/* *::-webkit-scrollbar-track:hover {
-  background-color: var(--primary-color);
-} */
-
 *::-webkit-scrollbar-track:active {
   background-color: #42c47e;
 }
