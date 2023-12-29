@@ -9,7 +9,7 @@ import BlogLayout from './pages/BlogLayout';
 // import BlogPostsPage, { loader as blogPostsLoader } from './pages/BlogPosts';
 import NewPostPage, { action as newPostAction } from './pages/NewPost';
 import PostDetailPage, { loader as blogPostLoader } from './pages/PostDetail';
-import RootLayout from './components/RootLayout';
+import RootLayout from './pages/RootLayout';
 import WelcomePage from './pages/Welcome';
 import ErrorPage from './pages/Error';
 import DeferredBlogPostsPage, {
