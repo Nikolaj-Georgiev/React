@@ -58,3 +58,8 @@
   color: #515151;
   background-color: transparent;
 }
+
+.form input.error,
+.form textarea.error {
+  border: 2px solid orangered;
+}
