@@ -14,7 +14,7 @@ function RootLayout() {
 
     setTimeout(() => {
       submit(null, { action: '/logout', method: 'post' })
-    }, 3_600_000)
+    }, 1 * 60 * 60 * 1000)
 
   }, [token, submit]);
 
