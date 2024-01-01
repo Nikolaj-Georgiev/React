@@ -41,6 +41,8 @@
 .card:hover {
   transform: translateY(-0.8rem);
   /* transform: rotateY(180deg); */
+  cursor: pointer;
+  box-shadow: 0 0.8rem 2rem rgba(247, 205, 8, 0.35);
 }
 
 .front,

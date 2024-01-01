@@ -13,6 +13,7 @@ export default function MainNav() {
           <NavLink
             to='about'
             className={({ isActive }) => (isActive ? active : linkCssClass)}
+            end
           >
             About
           </NavLink>
@@ -22,6 +23,7 @@ export default function MainNav() {
           <NavLink
             className={({ isActive }) => (isActive ? active : linkCssClass)}
             to='testimonials'
+            end
           >
             Testimonials
           </NavLink>
