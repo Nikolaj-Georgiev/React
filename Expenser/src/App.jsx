@@ -7,7 +7,6 @@ import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import About from './pages/About.jsx';
 import Testimonials from './pages/Testimonials.jsx';
-import NextSection from './components/NextSectiona.jsx';
 import ErrorPage from './pages/Error.jsx';
 
 const router = createBrowserRouter([
@@ -29,7 +28,6 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
-      {/* <NextSection /> */}
     </>
   );
 }
