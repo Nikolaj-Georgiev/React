@@ -57,7 +57,7 @@ export const CARDS_INFO = [
   {
     id: '4C',
     front: {
-      img: imageCloudSmall,
+      img: imageCloudBig,
       imgAlt: 'Image of a cloud services',
       title: 'Access your data from any device',
       description: 'Stay connected with your finances. Access your data anytime, anywhere, from any device with our cross-platform compatibility.'
@@ -71,7 +71,7 @@ export const CARDS_INFO = [
   {
     id: '5C',
     front: {
-      img: imageFamilySmall,
+      img: imageFamilyBig,
       imgAlt: 'Image of a happy family',
       title: 'Share progress with your family',
       // title: 'Share your progress with your family',

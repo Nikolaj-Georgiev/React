@@ -1,8 +1,7 @@
 .card {
   /* flex: 1 1 200px;  Stretching: */
-  flex: 0 1 20rem; /*  No stretching: */
+  flex: 0 1 30rem; /*  No stretching: */
   margin: 2.4rem;
-  max-width: 60rem;
   background-color: transparent;
   perspective: 100rem; /* Provides a 3D effect */
   transform-style: preserve-3d;
@@ -12,7 +11,6 @@
   box-shadow: 0 0.4rem 1.6rem rgba(247, 205, 8, 0.35);
   border-radius: 1rem;
   overflow: hidden;
-  /* padding-bottom: 0.8rem; */
 }
 
 .card img {
@@ -20,10 +18,10 @@
 }
 
 .card p {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: 500;
-  line-height: 1.2;
-  padding: 0.8rem;
+  line-height: 1.4;
+  padding: 1.2rem;
   text-align: start;
 }
 .inner {
@@ -73,7 +71,7 @@
 
 .front h3 {
   padding: 0.8rem;
-  font-size: 2rem;
+  font-size: 2.4rem;
   line-height: 1.2;
   margin-bottom: 3rem;
 }
