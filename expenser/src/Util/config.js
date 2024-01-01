@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import imagePieSmall from '../assets/pie-small.png';
 import imagePiggyBankSmall from '../assets/pig-small.png';
 import imageLightBulbSMall from '../assets/light-bulb-small.png';
@@ -15,7 +16,7 @@ export const CARDS_INFO = [
   {
     id: '1C',
     front: {
-      img: imagePieBig,
+      img: imagePieSmall,
       imgAlt: 'Image of a pie chart',
       title: 'Monthly budget for your household',
       description: 'Manage your household expenses effectively with our monthly budget tracker. Keep track of your income and expenses to ensure financial stability.'
@@ -29,7 +30,7 @@ export const CARDS_INFO = [
   {
     id: '2C',
     front: {
-      img: imagePiggyBankBig,
+      img: imagePiggyBankSmall,
       imgAlt: 'Image of a piggy bank',
       title: 'Set up family savings goals',
       description: 'Plan for the future with our family savings goals feature. Set targets, track progress, and achieve your financial dreams.'
@@ -43,7 +44,7 @@ export const CARDS_INFO = [
   {
     id: '3C',
     front: {
-      img: imageLightBulbBig,
+      img: imageLightBulbSMall,
       imgAlt: 'Image of a light bulb',
       title: 'Get personalized tips and insights',
       description: 'Unlock your financial potential with personalized tips and insights tailored to your spending habits and savings goals.'
@@ -57,7 +58,7 @@ export const CARDS_INFO = [
   {
     id: '4C',
     front: {
-      img: imageCloudBig,
+      img: imageCloudSmall,
       imgAlt: 'Image of a cloud services',
       title: 'Access your data from any device',
       description: 'Stay connected with your finances. Access your data anytime, anywhere, from any device with our cross-platform compatibility.'

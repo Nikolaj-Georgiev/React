@@ -43,7 +43,8 @@
 }
 
 .main-nav-link.nav-base:hover,
-.main-nav-link.nav-base:active {
+.main-nav-link.nav-base:active,
+.main-nav-link.nav-base.active {
   color: #f8d221;
   border: 2px solid #c6a406;
 }
