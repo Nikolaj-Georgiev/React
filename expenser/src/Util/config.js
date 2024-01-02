@@ -86,3 +86,30 @@ export const CARDS_INFO = [
   },
 ];
 
+export const HERO_BULLETS = [
+  {
+    id: '1b',
+    icon: 'pie-chart-outline',
+    bulletText: 'Monthly budget for your household'
+  },
+  {
+    id: '2b',
+    icon: 'wallet-outline',
+    bulletText: 'Set up family savings goals'
+  },
+  {
+    id: '3b',
+    icon: 'bulb-outline',
+    bulletText: 'Get personalized tips and insights'
+  },
+  {
+    id: '4b',
+    icon: 'cloud-done-outline',
+    bulletText: 'Access your data from any device'
+  },
+  {
+    id: '5b',
+    icon: 'people-outline',
+    bulletText: 'Share your progress with your family'
+  },
+]

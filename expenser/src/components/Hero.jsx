@@ -3,6 +3,7 @@ import smallPigImage from '../assets/logo-trans.png';
 import bigPigImage from '../assets/logo-trans-bigger.png';
 
 import Li from '../UI/Li';
+import { HERO_BULLETS } from '../Util/config';
 
 export default function Hero() {
   return (
@@ -19,56 +20,21 @@ export default function Hero() {
             </div>
             <div>
               <ul className={classes['hero-features-list']}>
-                <Li className={classes['hero-feature-item']}>
-                  <ion-icon
-                    class={classes['hero-icon']}
-                    name='pie-chart-outline'
-                    size='large'
-                  ></ion-icon>
-                  <p className={classes['hero-feature-text']}>
-                    Monthly budget for your household
-                  </p>
-                </Li>
-                <Li className={classes['hero-feature-item']}>
-                  <ion-icon
-                    class={classes['hero-icon']}
-                    name='wallet-outline'
-                    size='large'
-                  ></ion-icon>
-                  <p className={classes['hero-feature-text']}>
-                    Set up family savings goals
-                  </p>
-                </Li>
-                <Li className={classes['hero-feature-item']}>
-                  <ion-icon
-                    class={classes['hero-icon']}
-                    name='bulb-outline'
-                    size='large'
-                  ></ion-icon>
-                  <p className={classes['hero-feature-text']}>
-                    Get personalized tips and insights
-                  </p>
-                </Li>
-                <Li className={classes['hero-feature-item']}>
-                  <ion-icon
-                    class={classes['hero-icon']}
-                    name='cloud-done-outline'
-                    size='large'
-                  ></ion-icon>
-                  <p className={classes['hero-feature-text']}>
-                    Access your data from any device
-                  </p>
-                </Li>
-                <Li className={classes['hero-feature-item']}>
-                  <ion-icon
-                    class={classes['hero-icon']}
-                    name='people-outline'
-                    size='large'
-                  ></ion-icon>
-                  <p className={classes['hero-feature-text']}>
-                    Share your progress with your family
-                  </p>
-                </Li>
+                {HERO_BULLETS.map((bullet) => (
+                  <Li
+                    key={bullet.id}
+                    className={classes['hero-feature-item']}
+                  >
+                    <ion-icon
+                      class={classes['hero-icon']}
+                      name={bullet.icon}
+                      size='large'
+                    ></ion-icon>
+                    <p className={classes['hero-feature-text']}>
+                      {bullet.bulletText}
+                    </p>
+                  </Li>
+                ))}
               </ul>
             </div>
           </div>

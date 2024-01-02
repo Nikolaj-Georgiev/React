@@ -13,7 +13,8 @@ export default function MainNav() {
           <NavLink
             to='about'
             className={({ isActive }) => (isActive ? active : linkCssClass)}
-            end
+            // exact='true'
+            // replace
           >
             About
           </NavLink>
@@ -23,7 +24,8 @@ export default function MainNav() {
           <NavLink
             className={({ isActive }) => (isActive ? active : linkCssClass)}
             to='testimonials'
-            end
+            // exact='true'
+            // replace
           >
             Testimonials
           </NavLink>

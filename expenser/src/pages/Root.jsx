@@ -20,11 +20,3 @@ export default function RooterLayout() {
     </>
   );
 }
-
-{
-  /* <Hero id='hero' />
-        <Anchor id='about' />
-        <About />
-        <Anchor id='testimonials' />
-        <Testimonials /> */
-}
