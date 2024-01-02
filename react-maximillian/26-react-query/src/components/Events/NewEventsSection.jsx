@@ -10,7 +10,7 @@ export default function NewEventsSection() {
     queryKey: ['events'],
     queryFn: fetchEvents,
     staleTime: 5000, //standard time is 0;
-    gcTime: 30000, // standard time is set to 5 mins.
+    // gcTime: 1000, // standard time is set to 5 mins. You can control how long the data is kept around and cashed.
   });
 
   let content;
