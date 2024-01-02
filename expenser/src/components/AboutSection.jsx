@@ -5,6 +5,9 @@ import * as classes from './AboutSection.module.css';
 export default function AboutSectionPage() {
   return (
     <section className={classes.about}>
+      <h2 className={classes.heading}>
+        How Expenser Helps You Track and Manage Your Expenses
+      </h2>
       <div className={classes.cards}>
         {CARDS_INFO.map((card) => (
           <Card

@@ -11,6 +11,13 @@ import imageLightBulbBig from '../assets/light-bulb-big.png';
 import imageCloudBig from '../assets/cloud-big.png';
 import imageFamilyBig from '../assets/family-big.jpg';
 
+import imageCustomer1 from '../assets/customers/jimmy.jpg'
+import imageCustomer2 from '../assets/customers/jurica.jpg'
+import imageCustomer3 from '../assets/customers/philip.jpg'
+import imageCustomer4 from '../assets/customers/stephanie.jpg'
+
+import imageChart1 from '../assets/customers/chart1.webp'
+import imageChart2 from '../assets/customers/chart2.webp'
 
 export const CARDS_INFO = [
   {
@@ -80,7 +87,7 @@ export const CARDS_INFO = [
     },
     back: {
       icon: 'people-outline',
-      description: 'Our feature of sharing progress with your family makes financial management a collaborative effort. It allows you to share updates on your income, expenses, and savings goals with your family members, fostering transparency and mutual accountability. Whether it\'s reaching a savings goal or reducing monthly expenses, every achievement can be celebrated together. This feature also promotes financial literacy among family members, especially children, by involving them in the process. All data shared is protected with robust security measures to ensure your financial information remains private and secure. 💰'
+      description: 'Our feature of sharing progress with your family makes financial management a collaborative effort. It allows you to share updates on your income, expenses, and savings goals with your family members, fostering transparency and mutual accountability. Whether it\'s reaching a savings goal or reducing monthly expenses, every achievement can be celebrated together. This feature also promotes financial literacy among family members, especially children, by involving them in the process. Security measures to ensure your financial information remains private and secure. 💰'
       // Start sharing your progress with your family today and make financial management a family affair. 
     }
   },
@@ -112,4 +119,31 @@ export const HERO_BULLETS = [
     icon: 'people-outline',
     bulletText: 'Share your progress with your family'
   },
+]
+
+export const CUSTOMERS = [
+  {
+    id: 'cus1',
+    testimonial: '“Expenser is a lifesaver. It scans and records my receipts, links my accounts, and reminds me of bills. It\'s like having a personal accountant in my pocket.” - Lisa, 28',
+    image: imageCustomer1,
+    imageAlt: 'A jung woman with beautiful green eyes and a brown hair.'
+  },
+  {
+    id: 'cus2',
+    testimonial: '“Expenser is the best app for family finances. I can see and share our expenses with my spouse, and we can stay on top of our budget. Expenser keeps our family organized and transparent.” - David, 42',
+    image: imageCustomer2,
+    imageAlt: 'A good looking middle age man dressed with shirt and sweater'
+  },
+  {
+    id: 'cus3',
+    testimonial: '“Expenser is awesome! It\'s so easy to use and it helps me manage my money better. I can set up budgets, track my spending, and save more.” - Anna, 34',
+    image: imageCustomer4,
+    imageAlt: 'A beautiful woman with brown hair dressed in black'
+  },
+  {
+    id: 'cus4',
+    testimonial: '“Expenser is amazing. It\'s a powerful and user-friendly app that helps me control my finances. I can create goals, view reports, and sync my accounts. Expenser is the ultimate app for personal finance.” - Kevin, 37',
+    image: imageCustomer3,
+    imageAlt: 'A middle age man with red hat and a black sweater'
+  }
 ]

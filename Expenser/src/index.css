@@ -94,10 +94,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ///////////////////////////// */
-/*             HERO              */
-/* ///////////////////////////// */
-
 /* Other browsers - Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
   width: 0.8rem;
