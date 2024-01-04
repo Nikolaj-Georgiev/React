@@ -1,0 +1,13 @@
+.testimonials-section {
+  background-color: #d9f3e5;
+  display: grid;
+  grid-template-columns: 45fr 55fr;
+  align-items: center;
+}
+
+.testimonials-container {
+  padding: 9.6rem;
+  /* padding: 0 3.2rem; */
+  max-width: 120rem;
+  margin: 0 auto;
+}
