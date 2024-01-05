@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 // our-domain.com/news/something-important -> this will serve the news.js file
@@ -12,5 +13,8 @@ export default function DetailsPage() {
 
 
 
-  return <h1>The Details page</h1>
+  return <>
+    <h1>{newsId?.toLocaleUpperCase() || 'The Details Page'}</h1>
+    <Link href='/'>Back</Link>
+  </>
 }
