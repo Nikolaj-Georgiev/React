@@ -13,6 +13,7 @@ function MeetupItem(props) {
           <address>{props.address}</address>
         </div>
         <div className={classes.actions}>
+          {/* with Link/anchor would be the correct way but it is made like this to show that it can */}
           <button>Show Details</button>
         </div>
       </Card>

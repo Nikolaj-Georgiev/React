@@ -19,4 +19,5 @@ const DUMMY_MEETUPS = [
 
 export default function HomePage() {
   return <MeetupList meetups={DUMMY_MEETUPS} />
+
 }
