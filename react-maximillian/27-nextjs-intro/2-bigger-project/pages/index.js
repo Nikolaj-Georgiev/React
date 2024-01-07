@@ -1,24 +1,32 @@
-import MeetupList from '../components/meetups/MeetupList'
+import Head from 'next/head';
+import MeetupList from '../components/meetups/MeetupList';
+import { MongoClient } from 'mongodb';
 
-const DUMMY_MEETUPS = [
-  {
-    id: 'm1',
-    title: 'A First Meetup',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/1280px-Stadtbild_M%C3%BCnchen.jpg',
-    address: 'Some address 5, 12345 Some City',
-    description: 'This is a first meetup!'
-  },
-  {
-    id: 'm2',
-    title: 'A Second Meetup',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/1280px-Stadtbild_M%C3%BCnchen.jpg',
-    address: 'Some address 10, 12345 Some City',
-    description: 'This is a second meetup!'
-  }
-];
+// const DUMMY_MEETUPS = [
+//   {
+//     id: 'm1',
+//     title: 'A First Meetup',
+//     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/1280px-Stadtbild_M%C3%BCnchen.jpg',
+//     address: 'Some address 5, 12345 Some City',
+//     description: 'This is a first meetup!'
+//   },
+//   {
+//     id: 'm2',
+//     title: 'A Second Meetup',
+//     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/1280px-Stadtbild_M%C3%BCnchen.jpg',
+//     address: 'Some address 10, 12345 Some City',
+//     description: 'This is a second meetup!'
+//   }
+// ];
 
 export default function HomePage(props) { // -> this is the props set in getStaticProps()
-  return <MeetupList meetups={props.meetups} />
+  return <>
+    <Head>
+      <title>React Meetups</title>
+      <meta name='description' content='Browse a huge list of highly active React meetups!' />
+    </Head>
+    <MeetupList meetups={props.meetups} />
+  </>
 }
 
 
@@ -49,9 +57,24 @@ export async function getStaticProps() {
   // fetch data from API or database
   // read files from file system
 
+  const client = await MongoClient.connect('mongodb+srv://nikog:3JHfHiG8lCEvOVpr@cluster0.l8voow3.mongodb.net/meetups?retryWrites=true&w=majority');
+  const db = client.db();
+  const meetupsCollection = db.collection('meetups');
+
+  const meetups = await meetupsCollection.find().toArray();
+
+  client.close();
+
+  console.log(meetups);
+
   return {
     props: {
-      meetups: DUMMY_MEETUPS
+      meetups: meetups.map(meetup => ({
+        title: meetup.title,
+        image: meetup.image,
+        address: meetup.address,
+        id: meetup._id.toString(),
+      }))
     },
     revalidate: 1
   }; //always return an object
