@@ -28,31 +28,36 @@ export default function ChallengeItem({
 
   return (
     <li>
-      <article className="challenge-item">
+      <article className='challenge-item'>
         <header>
           <img {...challenge.image} />
-          <div className="challenge-item-meta">
+          <div className='challenge-item-meta'>
             <h2>{challenge.title}</h2>
             <p>Complete until {formattedDate}</p>
-            <p className="challenge-item-actions">
-              <button onClick={handleCancel} className="btn-negative">
+            <p className='challenge-item-actions'>
+              <button
+                onClick={handleCancel}
+                className='btn-negative'
+              >
                 Mark as failed
               </button>
               <button onClick={handleComplete}>Mark as completed</button>
             </p>
           </div>
         </header>
-        <div className="challenge-item-details">
+        <div
+          className={`challenge-item-details ${isExpanded ? 'expanded' : ''}`}
+        >
           <p>
             <button onClick={onViewDetails}>
               View Details{' '}
-              <span className="challenge-item-details-icon">&#9650;</span>
+              <span className='challenge-item-details-icon'>&#9650;</span>
             </button>
           </p>
 
           {isExpanded && (
             <div>
-              <p className="challenge-item-description">
+              <p className='challenge-item-description'>
                 {challenge.description}
               </p>
             </div>
