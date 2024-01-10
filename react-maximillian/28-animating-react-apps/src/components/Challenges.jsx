@@ -1,4 +1,5 @@
 import { useContext, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import { ChallengesContext } from '../store/challenges-context.jsx';
 import ChallengeItem from './ChallengeItem.jsx';
@@ -34,25 +35,44 @@ export default function Challenges() {
   const displayedChallenges = filteredChallenges[selectedType];
 
   return (
-    <div id="challenges">
+    <div id='challenges'>
       <ChallengeTabs
         challenges={filteredChallenges}
         onSelectType={handleSelectType}
         selectedType={selectedType}
       >
-        {displayedChallenges.length > 0 && (
-          <ol className="challenge-items">
-            {displayedChallenges.map((challenge) => (
-              <ChallengeItem
-                key={challenge.id}
-                challenge={challenge}
-                onViewDetails={() => handleViewDetails(challenge.id)}
-                isExpanded={expanded === challenge.id}
-              />
-            ))}
-          </ol>
-        )}
-        {displayedChallenges.length === 0 && <p>No challenges found.</p>}
+        <AnimatePresence mode='wait'>
+          {displayedChallenges.length > 0 && (
+            <motion.ol
+              key='list'
+              initial={{ y: -20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -30, opacity: 0 }}
+              className='challenge-items'
+            >
+              <AnimatePresence>
+                {displayedChallenges.map((challenge) => (
+                  <ChallengeItem
+                    key={challenge.id}
+                    challenge={challenge}
+                    onViewDetails={() => handleViewDetails(challenge.id)}
+                    isExpanded={expanded === challenge.id}
+                  />
+                ))}
+              </AnimatePresence>
+            </motion.ol>
+          )}
+          {displayedChallenges.length === 0 && (
+            <motion.p
+              key='fallback'
+              initial={{ y: -20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ opacity: 0, y: -20 }}
+            >
+              No challenges found.
+            </motion.p>
+          )}
+        </AnimatePresence>
       </ChallengeTabs>
     </div>
   );
