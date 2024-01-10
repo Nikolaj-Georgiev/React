@@ -105,3 +105,21 @@ function add(a: number, b: number) {
 function printOutput(value: any) {
   console.log(value);
 } // return type void -> it means that it does not return anything and if we want to use it's returned value we will got undefined.
+
+////////////////////////
+//      Generics      //
+////////////////////////
+
+function insertAtBeginning<T>(array: T[], value: T) {
+  const newArr = [value, ...array];
+  return newArr;
+}
+
+const demoArr = [1, 2, 3];
+
+const updatedArr = insertAtBeginning(demoArr, -1); // [-1, 1, 2, 3]
+
+const stringArr = insertAtBeginning(['Pehso', 'Gosho', 'Atanas', '&'], 'az');
+
+// updatedArr[0].split(''); -> it warn you that .split does not exist on type number!
+stringArr[0].split('');
