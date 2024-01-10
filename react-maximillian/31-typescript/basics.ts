@@ -90,3 +90,18 @@ let gosho: Person = {
 
 mnogoPersonas = [pesho, gosho];
 console.log(mnogoPersonas);
+
+/////////////////////////////////
+//      Functions & types      //
+/////////////////////////////////
+
+function add(a: number, b: number) {
+  return a + b;
+}
+// function add(a: number, b: number):number {
+//   return a + b;
+// } -> the function also have a return type. in this simple case we can use ts inference for the return type, but if a more complex function is there we should not forget that it also have a return type and we can specify it with : after the (params).
+
+function printOutput(value: any) {
+  console.log(value);
+} // return type void -> it means that it does not return anything and if we want to use it's returned value we will got undefined.
