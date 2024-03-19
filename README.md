@@ -13,6 +13,7 @@
  <span>Here you can check the game: https://gnikolay-tic-tac-toe.netlify.app</span>
  
  <span> * there are some improvements that I may add for mobile in the future</span>
+ <span> Just transitioned the game in Typescript</span>
 </p>
 
 
