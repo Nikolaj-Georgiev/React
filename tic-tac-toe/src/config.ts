@@ -1,4 +1,6 @@
-export const WINNING_COMBINATIONS = [
+import { Square, Players } from './types';
+
+export const WINNING_COMBINATIONS: Square[][] = [
   [
     { row: 0, column: 0 },
     { row: 0, column: 1 },
@@ -41,12 +43,12 @@ export const WINNING_COMBINATIONS = [
   ],
 ];
 
-export const PLAYERS = {
+export const PLAYERS: Players = {
   X: 'Player 1',
   O: 'Player 2',
 };
 
-export const INITIAL_GAME_BOARD = [
+export const INITIAL_GAME_BOARD: (string | null)[][] = [
   [null, null, null],
   [null, null, null],
   [null, null, null],
