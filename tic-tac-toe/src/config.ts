@@ -1,4 +1,4 @@
-import { Square, Players } from './types';
+import { Square, Players, SquareValue } from './types';
 
 export const WINNING_COMBINATIONS: Square[][] = [
   [
@@ -48,7 +48,7 @@ export const PLAYERS: Players = {
   O: 'Player 2',
 };
 
-export const INITIAL_GAME_BOARD: (string | null)[][] = [
+export const INITIAL_GAME_BOARD: SquareValue[][] = [
   [null, null, null],
   [null, null, null],
   [null, null, null],

@@ -1,3 +1,5 @@
+import { SquareValue } from './types';
+
 export function deriveActivePlayer(turns: { player: string }[]): string {
   let currentPlayer = 'X';
 
@@ -9,7 +11,7 @@ export function deriveActivePlayer(turns: { player: string }[]): string {
 }
 
 export function deriveWinner(
-  gameBoard: string[][],
+  gameBoard: SquareValue[][],
   players: Record<string, string>,
   WINNING_COMBINATIONS: { row: number; column: number }[][]
 ): string | null {
@@ -34,17 +36,19 @@ export function deriveWinner(
 }
 
 export function deriveGameBoard(
-  initialGameBoard: string[][],
-  gameTurns?: { square: { row: number; col: number }; player: string }[]
-): string[][] {
+  initialGameBoard: SquareValue[][],
+  gameTurns?: { square: { row: number; column: number }; player: SquareValue }[]
+): SquareValue[][] {
   // Create a deep copy of the initial game board
-  const gameBoard: string[][] = JSON.parse(JSON.stringify(initialGameBoard));
+  const gameBoard: SquareValue[][] = JSON.parse(
+    JSON.stringify(initialGameBoard)
+  );
 
   gameTurns?.forEach((turn) => {
     const { square, player } = turn;
-    const { row, col } = square;
+    const { row, column } = square;
 
-    gameBoard[row][col] = player;
+    gameBoard[row][column] = player;
   });
 
   return gameBoard;
