@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import GameBoard from './components/GameBoard.jsx';
-import Player from './components/Player.jsx';
-import Log from './components/Log.jsx';
-import GameOver from './components/GameOver.jsx';
+import GameBoard from './components/GameBoard.js';
+import Player from './components/Player.js';
+import Log from './components/Log.js';
+import GameOver from './components/GameOver.js';
 import { WINNING_COMBINATIONS, PLAYERS, INITIAL_GAME_BOARD } from './config.js';
 import * as helper from './helpers.js';
 
