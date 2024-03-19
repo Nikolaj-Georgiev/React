@@ -1,10 +1,12 @@
-// import { useState } from 'react';
+import React from 'react';
+import { SquareValue } from '../types';
 
-export default function GameBoard({ onSelectSquare, board }) {
-  /////////////////////
-  //N.B. think and work in React! You should MANAGE as LITTLE STATE as needed and try to DERIVE as MUCH information and as many values, as possible!!!!
-  /////////////////////
+interface GameBoardProps {
+  onSelectSquare: (rowIndex: number, colIndex: number) => void;
+  board: SquareValue[][];
+}
 
+const GameBoard: React.FC<GameBoardProps> = ({ onSelectSquare, board }) => {
   return (
     <ol id='game-board'>
       {board.map((row, rowIndex) => (
@@ -12,7 +14,6 @@ export default function GameBoard({ onSelectSquare, board }) {
           <ol>
             {row.map((player, colIndex) => (
               <li key={colIndex}>
-                {/* <button onClick={() => handleUserChoice(rowIndex, colIndex)}> */}
                 <button
                   onClick={() => onSelectSquare(rowIndex, colIndex)}
                   disabled={player !== null}
@@ -26,7 +27,39 @@ export default function GameBoard({ onSelectSquare, board }) {
       ))}
     </ol>
   );
-}
+};
+
+export default GameBoard;
+
+// // import { useState } from 'react';
+
+// export default function GameBoard({ onSelectSquare, board }) {
+//   /////////////////////
+//   //N.B. think and work in React! You should MANAGE as LITTLE STATE as needed and try to DERIVE as MUCH information and as many values, as possible!!!!
+//   /////////////////////
+
+//   return (
+//     <ol id='game-board'>
+//       {board.map((row, rowIndex) => (
+//         <li key={rowIndex}>
+//           <ol>
+//             {row.map((player, colIndex) => (
+//               <li key={colIndex}>
+//                 {/* <button onClick={() => handleUserChoice(rowIndex, colIndex)}> */}
+//                 <button
+//                   onClick={() => onSelectSquare(rowIndex, colIndex)}
+//                   disabled={player !== null}
+//                 >
+//                   {player}
+//                 </button>
+//               </li>
+//             ))}
+//           </ol>
+//         </li>
+//       ))}
+//     </ol>
+//   );
+// }
 
 // old code before optimizations
 
