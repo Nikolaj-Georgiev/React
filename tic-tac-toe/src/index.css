@@ -31,26 +31,30 @@ body {
 
 header {
   text-align: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 header img {
-  width: 8rem;
+  width: 3rem;
   object-fit: contain;
   opacity: 90%;
-  margin: 3rem auto 1rem auto;
+  /* margin: auto; */
   filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.4));
 }
 
 h1 {
   font-family: 'Caprasimo', cursive;
-  font-size: 3rem;
-  margin: 0 auto 3rem auto;
+  font-size: 2rem;
+  /* margin: 0 auto 3rem auto; */
   color: #3f3b00;
 }
 
 #game-container {
   max-width: 45rem;
-  margin: 3rem auto;
+  margin: 0 auto;
   padding: 2rem;
   border-radius: 6px;
   background: linear-gradient(#383624, #282617);
