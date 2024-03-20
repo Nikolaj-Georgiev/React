@@ -1,22 +1,32 @@
 import React, { useState } from 'react';
-import GameBoard from './components/GameBoard'; // Ensure this is .tsx
-import Player from './components/Player'; // Ensure this is .tsx
-import Log from './components/Log'; // Ensure this is .tsx
-import GameOver from './components/GameOver'; // Ensure this is .tsx
-import { WINNING_COMBINATIONS, PLAYERS, INITIAL_GAME_BOARD } from './config'; // Ensure config is properly typed
-import * as helper from './helpers'; // Ensure helpers are properly typed
-import { Players, SquarePosition } from './types'; // Assuming these types are defined in your types.ts
+import GameBoard from './components/GameBoard';
+import Player from './components/Player';
+import Log from './components/Log';
+import GameOver from './components/GameOver';
+import { WINNING_COMBINATIONS, PLAYERS, INITIAL_GAME_BOARD } from './config';
+import * as helper from './helpers';
+import { Players, SquarePosition } from './types';
+import { getAIMove } from './api/mockAI';
+import GameModeModal from './components/GameModeModal';
 
 const App: React.FC = () => {
   const [players, setPlayers] = useState<Players>(PLAYERS);
   const [gameTurns, setGameTurns] = useState<
     Array<{ square: SquarePosition; player: 'X' | 'O' }>
   >([]);
+  const [isGameModeSelected, setIsGameModeSelected] = useState<boolean>(false);
+  const [isAIMode, setIsAiMode] = useState<boolean>(false);
 
   let activePlayer = helper.deriveActivePlayer(gameTurns);
   const gameBoard = helper.deriveGameBoard(INITIAL_GAME_BOARD, gameTurns);
   const winner = helper.deriveWinner(gameBoard, players, WINNING_COMBINATIONS);
   const hasDraw = gameTurns.length === 9 && !winner;
+
+  const handleGameModeSelect = (isAI: boolean) => {
+    setIsAiMode(isAI);
+    setIsGameModeSelected(true);
+    //some logic?
+  };
 
   const handleSelectSquare = (rowIndex: number, colIndex: number): void => {
     setGameTurns((prevTurns) => [
@@ -43,6 +53,9 @@ const App: React.FC = () => {
   return (
     <main>
       <div id='game-container'>
+        {!isGameModeSelected && (
+          <GameModeModal onSelectMode={handleGameModeSelect} />
+        )}
         <ol
           id='players'
           className='highlight-player'
