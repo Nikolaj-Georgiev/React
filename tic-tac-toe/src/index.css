@@ -19,38 +19,42 @@ html {
 
 body {
   background: radial-gradient(
-      circle at top,
-      rgba(241, 210, 70, 0.98),
-      rgba(250, 176, 103, 0.87)
-    ),
-    url('bg-pattern-dark.png');
-  background-repeat: repeat;
-  background-size: 100% 100%, 30% 30%, 100% 100%;
+    circle at top,
+    rgba(241, 210, 70, 0.98),
+    rgba(250, 176, 103, 0.87)
+  );
+  /* url('bg-pattern-dark.png'); */
+  /* background-repeat: repeat; */
+  /* background-size: 100% 100%, 30% 30%, 100% 100%; */
   min-height: 110rem;
 }
 
 header {
   text-align: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 header img {
-  width: 8rem;
+  width: 3rem;
   object-fit: contain;
   opacity: 90%;
-  margin: 3rem auto 1rem auto;
+  /* margin: auto; */
   filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.4));
 }
 
 h1 {
   font-family: 'Caprasimo', cursive;
-  font-size: 3rem;
-  margin: 0 auto 3rem auto;
+  font-size: 2rem;
+  /* margin: 0 auto 3rem auto; */
   color: #3f3b00;
 }
 
 #game-container {
   max-width: 45rem;
-  margin: 3rem auto;
+  margin: 0 auto;
   padding: 2rem;
   border-radius: 6px;
   background: linear-gradient(#383624, #282617);
@@ -284,6 +288,58 @@ ol {
   color: #23221f;
   font: inherit;
   margin-top: 1.5rem;
+}
+
+#modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-color: rgba(40, 38, 23, 0.95);
+  animation: pop-in 0.5s cubic-bezier(0.68, -0.55, 0.65, 0.52) forwards;
+}
+
+#modal h2 {
+  font-family: 'Caprasimo', cursive;
+  font-size: 3.3rem;
+  text-align: center;
+  color: #fcd256;
+  margin: 0;
+  margin-bottom: 4rem;
+}
+
+#modal p {
+  font-size: 2rem;
+  text-align: center;
+  color: #e1dec7;
+}
+
+#modal button {
+  display: block;
+  width: 30rem;
+  margin: 0 auto;
+  font-size: 1.7rem;
+  background: none;
+  border: 2px solid #fcd256;
+  color: #fcd256;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s, color 0.2s;
+  box-shadow: 0 0 8px rgba(255, 187, 0, 0.4);
+}
+
+#modal button:hover {
+  background: #fcd256;
+  color: #3f3b00;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 187, 0, 0.8);
 }
 
 @keyframes slide-in-from-left {

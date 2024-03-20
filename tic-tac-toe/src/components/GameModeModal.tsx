@@ -6,10 +6,10 @@ interface GameModeModalProps {
 
 const GameModeModal: React.FC<GameModeModalProps> = ({ onSelectMode }) => {
   return (
-    <div className='modal'>
+    <div id='modal'>
       <h2>Choose Your Opponent</h2>
-      <button onClick={() => onSelectMode(false)}>Human</button>
-      <button onClick={() => onSelectMode(true)}>Computer</button>
+      <button onClick={() => onSelectMode(true)}>Solo vs Computer</button>
+      <button onClick={() => onSelectMode(false)}>Multiplayer vs Human</button>
     </div>
   );
 };
