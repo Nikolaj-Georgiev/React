@@ -26,7 +26,8 @@ const App: React.FC = () => {
     const makeAIMove = async () => {
       if (isAIMode && !winner && activePlayer === 'O') {
         console.log('opa');
-        const aiMove = await getAIMove(gameBoard);
+        const depth = 6;
+        const aiMove = await getAIMove(gameBoard, depth);
         console.log(aiMove);
         handleSelectSquare(aiMove.row, aiMove.column);
       }
